@@ -1,12 +1,19 @@
 package edu.mu.cs3330.assign2;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class QuestBoard {
 	private Map<Integer, Quest> questsById;
 	private Map<Student, List<Quest>> assignments;
+	
+	public QuestBoard() {
+		
+		this.questsById = new HashMap<Integer, Quest>();
+		this.assignments = new HashMap<Student, List<Quest>>();
+	}
 	
 	/*
 	 * Function to add a quest to the quest board.
@@ -17,7 +24,7 @@ public class QuestBoard {
 		int id = q.getID();
 		// Check for duplicate IDs
 		if (questsById.containsKey(id)) {
-			throw new IllegalArgumentException("Attempted to add already included quest.");
+			throw new IllegalArgumentException("Attempted to add already added quest.");
 		}
 		questsById.put(id, q);
 		
@@ -87,7 +94,7 @@ public class QuestBoard {
 	 */
 	public void printAllQuests() {
 		for (Map.Entry<Integer, Quest> entry : questsById.entrySet()) {
-			entry.getValue().toString(); // Print Quest
+			System.out.println(entry.getValue().toString()); // Print Quest
 		}
 		return;
 	}
@@ -101,7 +108,7 @@ public class QuestBoard {
 			System.out.println(s.getName() + "'s Quests:");
 			List<Quest> list = assignments.get(s);
 			for (Quest q : list) {
-				q.toString();
+				System.out.println(q.toString());
 			}
 		}
 		return;

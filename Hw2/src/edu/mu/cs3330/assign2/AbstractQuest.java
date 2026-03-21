@@ -21,12 +21,8 @@ public abstract class AbstractQuest implements Quest{
 			throw new IllegalArgumentException("Base points must be greater than zero.");
 		}
 		this.basePoints = basePoints;
-		
 		this.completed = false;
-		
-		
-		throw new IllegalArgumentException("Error: unimplemented function.");
-	}
+		}
 	
 	public int getID() {
 		return id;
@@ -49,7 +45,7 @@ public abstract class AbstractQuest implements Quest{
 	@Override
 	public String toString() {
 		String str = "";
-		str = str + "Title: " + this.title + "-- ID: " + this.id + "\n\t Base Points: " 
+		str = str + "Title: " + this.title + " -- ID: " + this.id + "\n\t Base Points: " 
 				+ this.basePoints + "\n\t Complete Status: " + this.completed + "\n";
 		return str;
 	}
