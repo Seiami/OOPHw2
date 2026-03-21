@@ -72,7 +72,7 @@ public class QuestBoard {
 	public int completeQuest(Student s, int questID) {
 		// Check if student is registered
 		if (!assignments.containsKey(s)) {
-			throw new IllegalArgumentException("Tried to complete quest, but student is not registered.");
+			throw new IllegalArgumentException("Tried to complete quest, but student is not registered with any quests on the board.");
 		}
 		Quest q = findQuest(questID);
 		// Check if quest is assigned
