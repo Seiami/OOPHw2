@@ -1,4 +1,4 @@
-package edu.mu.cs330.assign2;
+package edu.mu.cs3330.assign2;
 
 public abstract class AbstractQuest implements Quest{
 	protected String title;
